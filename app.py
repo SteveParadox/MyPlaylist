@@ -31,7 +31,7 @@ def save_img(form_photo):
 class Music(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     music_filename = db.Column(db.String())
-    music_data = db.Column(db.BLOB)
+    music_data = db.Column(db.LargeBinary)
 
 
 @app.route('/', methods=['POST', 'GET'])
