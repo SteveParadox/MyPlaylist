@@ -1,0 +1,30 @@
+.bass{
+width: 315px;
+  background: #ff0033;
+  color: #333333;
+
+  border: 0px;
+  outline: 0;
+  border-bottom: 2px;
+  border-top: 2px;
+
+
+
+}
+.fas{
+max-width: 300px;
+            margin: auto;
+            height: 50px;
+            color: white;
+            background-color: green;
+            border-radius: 10px;
+
+}
+
+.bads{
+height: 97px;
+
+  background: #03fff3;
+border-bottom: 5px solid #000000;
+
+}
