@@ -11,7 +11,7 @@ import secrets
 from flask import current_app
 
 app.secret_key = 'asdnafnj#46sjsnvd(*$43sfjkndkjvnskb6441531@#$$6sddf'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://isyrbsxhlmykke:264c21cf7c770bfbe586fdd4c413bebb6da3fa34f154a262d8dd73de2ea1d2a7@ec2-34-225-82-212.compute-1.amazonaws.com:5432/d7ct20f1f2urjn'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
