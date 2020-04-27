@@ -1,1 +1,2 @@
-web: gunicorn run:app
+
+gunicorn = gunicorn -w 3 run:app
