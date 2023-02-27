@@ -40,17 +40,16 @@ def music():
     form = UploadMusic()
     if form.is_submitted():
         file = request.files['music']
-        music_file = save_img(form.music.data)
-        post = Music(music_data=file.read(),
-                     music_filename=music_file)
+        filename = secure_filename(file.filename)
+        music_file = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(music_file)
+        post = Music(music_data=music_file, music_filename=filename)
         db.session.add(post)
         db.session.commit()
         return redirect(url_for('music'))
-    posts = Music.query.filter_by(music_filename=Music.music_filename).order_by(
-        Music.music_filename.desc()).paginate(page=page, per_page=10)
-    #x = random.shuffle(posts)
-
+    posts = Music.query.order_by(Music.date_created.desc()).paginate(page=page, per_page=10)
     return render_template('music.html', form=form, posts=posts)
+
 
 
 if __name__ == ('__main__'):
